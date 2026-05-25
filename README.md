@@ -1,4 +1,4 @@
-# Centipede Game Heatmaps
+# Centipede Game Defection Rate Heatmaps
 
 R notebook for visualizing defection patterns in finite and infinite N-player centipede games. Generates heatmaps across rounds and repetitions using two defection rate calculation approaches.
 
