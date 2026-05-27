@@ -40,7 +40,7 @@ For the **infinite game**, two variants are computed from `games.csv`, which con
 - **All stopping events (4.a):** counts both player defections and computer terminations toward the cumulative total. Denominator is total number of games, fixed at N=987.
 
 - **Player defection only (4.b):** counts only rounds where the player chose to defect. Uses a Kaplan-Meier (KM) style adjusted denominator to handle computer terminations as right-censored observations. At each round, games terminated by the computer in *prior* rounds are removed from the risk set; games that ended by player defection remain in the denominator throughout, mirroring the finite game CDF logic. This is the most appropriate comparison to the finite game CDF, as both estimate the same estimand: the cumulative probability of player-initiated defection by round N.
-   - **Independent and Non-Informative Censoring Assumption for KM Estimator:** Computer termination at each round is assigned with fixed 1/3 probability independently of the sampled player decisions. Because pathways are reconstructed from independent between-subjects observations rather than real sequential games, later-round risk sets are not behaviorally selected for cooperators, and the non-informative censoring assumption holds. The KM estimator therefore recovers an unbiased estimate of cumulative defection probability under the empirical between-subjects distribution behavior.
+   - **Independent and Non-Informative Censoring Assumption for KM Estimator:** Computer termination at each round is assigned with fixed 1/3 probability independently of the sampled player decisions. Because pathways are reconstructed from independent between-subjects observations, which matches the actual game structure where each player makes exactly one decision at one assigned node, later-round risk sets are not behaviorally selected for cooperators, and the non-informative censoring assumption holds. The KM estimator therefore recovers an unbiased estimate of the cumulative probability of player-initiated defection by round N.
 
 ### Conditional defection rate approach (consistent with bar chart calculations from inf game analysis)
 Among games that reached round N, the proportion that defected there. Each round is evaluated independently of earlier ones, games that stopped before round N are excluded from both numerator and denominator. 
@@ -54,7 +54,7 @@ Note: the infinite game conditional defection rate (Section 3) uses `NEWprocesse
 Data files are not included. Contact to request.
 
 - **Finite** (Sections 1 & 2): `data/data_paper_player.csv`, `data/data_paper_group.csv`
-- **Infinite** (Section 3, 4, & 5): `data/NEWprocessed.rds`, `data/games.csv`
+- **Infinite** (Section 3, 4.a, & 4.b): `data/NEWprocessed.rds`, `data/games.csv`
 
 
 ---
